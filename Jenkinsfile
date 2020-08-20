@@ -1,4 +1,7 @@
 pipeline {
+    agent {
+        any
+    }
 
     options {
         buildDiscarder logRotator( 
@@ -42,7 +45,7 @@ pipeline {
         //     }
         // }
 
-        
+
         // stage('Build Deploy Code') {
         //     when {
         //         branch 'develop'
