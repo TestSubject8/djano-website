@@ -22,8 +22,8 @@ pipeline {
             steps {
                 checkout([
                     $class: 'GitSCM', 
-                    branches: [[name: 'demo']], 
-                    userRemoteConfigs: [[url: 'https://github.com/TestSubject8/djano-website']]
+                    branches: [[name: 'flask-demo']], 
+                    userRemoteConfigs: [[url: 'https://github.com/TestSubject8/portfolio-website']]
                 ])
             }
         }
