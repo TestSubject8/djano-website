@@ -31,6 +31,7 @@ pipeline {
         stage('Move code') {
             steps {
                 sh """
+                rm -r /home/website/demosite/*
                 mv * /home/website/demosite/
                 """
             }
