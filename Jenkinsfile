@@ -40,8 +40,8 @@ pipeline {
         stage('Restart webserver'){
             steps {
 		sh """
-		systemctl restart uwsgi-app
-		systemctl restart nginx
+		sudo systemctl restart uwsgi-app
+		sudo systemctl restart nginx
 		"""
             }
         }
