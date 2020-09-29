@@ -8,11 +8,9 @@ def start(name=None):
     return render_template('start.html', name=name)
 
 @app.route('/')
-@app.route('/about/')
-@app.route('/about/<focus>')
-def about(focus='Default'):
-	focus_list={'programmer': 'software', 'maker': 'builds'}
-	return render_template('content-body.html', focus=focus, focus_title=focus_list.get(focus))
+def about():
+	images = ['LZ1.png', 'LZ2.png']
+	return render_template('content-body.html', images=images)
 
 @app.route('/resume/<focus>')
 def resume_page(focus):
