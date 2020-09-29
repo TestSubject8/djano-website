@@ -31,33 +31,17 @@ pipeline {
         stage('Move code') {
             steps {
                 sh """
-                rm -r /home/website/demosite/*
-                mv * /home/website/demosite/
+                rm -r /home/website/portfolio-website/*
+                mv * /home/website/portfolio-website/
                 """
             }
         }
 
-        // stage('Restart webserver'){
-        //     steps {
-
-        //     }
-        // }
-
-
-        // stage('Build Deploy Code') {
-        //     when {
-        //         branch 'develop'
-        //     }
-        //     steps {
-        //         sh """
-        //         echo "Building Artifact"
-        //         """
-
-        //         sh """
-        //         echo "Deploying Code"
-        //         """
-        //     }
-        // }
-
+        stage('Restart webserver'){
+            steps {
+		systemctl restart uwsgi-app
+		systemctl restart nginx
+            }
+        }
     }   
 }
