@@ -1,3 +1,6 @@
 FLASK BUILD
 Following https://realpython.com/flask-by-example-part-1-project-setup/#config-settings
 ( go back here for env setup )
+
+UWSGI setup
+Followed https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uwsgi-and-nginx-on-ubuntu-20-04 because I have no idea what I'm doing
