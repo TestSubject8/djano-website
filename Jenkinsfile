@@ -41,7 +41,7 @@ pipeline {
             steps {
                 dir("/home/website/portfolio-website/"){
                     sh """
-                    python3 -m virtualenv basic-env
+                    python3 -m virtualenv basic-env -p python3
                     source basic-env/bin/activate && pip install -r requirements.txt 
                     sudo systemctl restart uwsgi-app
                     sudo systemctl restart nginx
