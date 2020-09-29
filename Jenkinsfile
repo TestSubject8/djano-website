@@ -39,11 +39,15 @@ pipeline {
 
         stage('Restart webserver'){
             steps {
-		sh """
-		sudo systemctl restart uwsgi-app
-		sudo systemctl restart nginx
-		"""
-            }
+                dir("/home/website/portfolio-website/"){
+                    sh """
+                    python3 -m virtualenv basic-env -p python3
+                    . ./basic-env/bin/activate && pip install -r requirements.txt 
+                    sudo systemctl restart uwsgi-app
+                    sudo systemctl restart nginx
+                    """
+                }
+	    }
         }
     }   
 }
