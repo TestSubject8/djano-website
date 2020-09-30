@@ -17,17 +17,20 @@
   </div>
   
   <!-- Portfolio Section -->
-  <div class="w3-padding-64 w3-content" id="photos">
+  <div class="w3-padding-64 w3-content" id="artwork">
     <h2 class="w3-text-light-grey">Led Zeppelin Project. </h2>
     <hr style="width:200px" class="w3-opacity">
 
     <!-- Grid for photos -->
     <div class="w3-row-padding" style="margin:0 -16px">
+
+      {% for img,name in images %}
       <div class="w3-half">
-        {% for i in images %}
-          <img src="/static/{{ i }}" style="width:100%">
-        {% endfor %}
+        <p> {{ name }} </p>
+        <img src="/static/{{ img }}" style="width:100%">
       </div>
+      {% endfor %}
+
     <!-- End photo grid -->
     </div>
   <!-- End Portfolio Section -->

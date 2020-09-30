@@ -31,8 +31,8 @@ pipeline {
         stage('Move code') {
             steps {
                 sh """
-                rm -r /home/website/portfolio-website/*
-                mv * /home/website/portfolio-website/
+                    rm -r /home/website/portfolio-website/*
+                    mv * /home/website/portfolio-website/
                 """
             }
         }
@@ -43,10 +43,12 @@ pipeline {
                     sh """
                     python3 -m virtualenv basic-env -p python3
                     . ./basic-env/bin/activate && pip install -r requirements.txt 
-                    sudo systemctl restart uwsgi-app
-                    sudo systemctl restart nginx
                     """
                 }
+                sh """
+                    sudo systemctl restart uwsgi-app
+                    // sudo systemctl restart nginx     // probably not necessary
+                """
 	    }
         }
     }   

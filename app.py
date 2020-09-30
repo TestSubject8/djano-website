@@ -9,8 +9,8 @@ def start(name=None):
 
 @app.route('/')
 def about():
-	images = ['LZ1.png', 'LZ2.png']
-	return render_template('content-body.html', images=images)
+	led_zep_proj_data = [('LZ1.png', "Led Zeppelin 1"), ('LZ2.png', "Led Zeppelin 2")]
+	return render_template('content-body.html', images=led_zep_proj_data)
 
 @app.route('/resume/<focus>')
 def resume_page(focus):
